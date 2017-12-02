@@ -1,0 +1,22 @@
+library(ggplot2)
+data(mtcars)
+
+summary(mtcars)
+print(mtcars)
+
+ggplot(mtcars, aes(x=mpg)) + geom_histogram(binwidth = 5, color = "red", fill = "blue") +
+ggtitle("Distribution of Miles Per Gallon") + theme(plot.title = element_text(hjust = 0.5)) + 
+theme(text = element_text(size = 12)) + xlab("Number") + ylab("Miles Per Gallon") + 
+xlim(0, 50) + ylim(0, 11)
+  
+  theme(
+  panel.background = element_rect(fill = "grey",
+                                  colour = "black",
+                                  size = 0.5, linetype = "solid"),
+  panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                  colour = "white"), 
+  panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                  colour = "white")
+)
+
+
